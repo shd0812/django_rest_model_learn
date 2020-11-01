@@ -17,3 +17,6 @@ class Persons(models.Model):
 
     class Meta:
         db_table = "tb_person"
+
+
+
