@@ -11,6 +11,7 @@ class ProjectView(View):
 
     def get(self, request):
         projects = Projects.objects.all()
+        print(projects)
         serializer = ProjectModelSerializer(instance=projects, many=True)
 
         return JsonResponse(serializer.data, safe=False)

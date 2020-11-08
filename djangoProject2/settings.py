@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'application.apps.ApplicationConfig',
     'projects.apps.ProjectsConfig',
-    'interfaces.apps.InterfacesConfig'
+    'interfaces.apps.InterfacesConfig',
+    'param_app.apps.ParamAppConfig',
+    'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [
@@ -126,3 +128,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+# 认证 权限 限流
+# REST_FRAMEWORK = {
+#     "DEFAULT_AUTHENTICATION_CLASSES" : ["users.auth.VipAuthTicate", ],
+#     "DEFAULT_PERMISSION_CLASSES" : ["users.permission.myPermission", ],
+#     "DEFAULT_THROTTLE_RATES": {
+#         "luffy": "3/m"
+#     }
+# }
+
+REST_FRAMEWORK = {
+    # "DEFAULT_VERSION": "v1",
+    # "ALLOWED_VERSIONS": ['v1', 'v2'],
+    # "VERSION_PARAM": 'version',
+    "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.URLPathVersioning",
+}

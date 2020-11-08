@@ -20,8 +20,10 @@ from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', views.Human.as_view()),
-    path('users/<int:id>/', views.PersonDetail.as_view()),
-    path('', include("projects.urls")),
+    path('api/humen/', views.Human.as_view()),
+    path('api/humen/<int:id>/', views.PersonDetail.as_view()),
+    path('api/projects/', include("projects.urls")),
+    path('api/users/', include("users.urls")),
+    path('api/param/', include("param_app.urls")),
 
 ]
