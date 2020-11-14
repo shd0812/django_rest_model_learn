@@ -54,7 +54,7 @@ class UserInforSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserInfo
         fields = '__all__'
-        depth = 2 # 不要超过3
+        depth = 1 # 不要超过3    对着depth增多，返回关联表的层级越多
         # fields = ["userName", 'password', 'group']
 
 
@@ -62,7 +62,9 @@ class UserInforSerializer(serializers.ModelSerializer):
 class UserInfoView(APIView):
 
     def get(self, request):
+        self.dispatch()
         user_obj = UserInfo.objects.all()
         ser = UserInforSerializer(user_obj, many=True)
+
         import json
         return HttpResponse(json.dumps(ser.data, ensure_ascii=False))

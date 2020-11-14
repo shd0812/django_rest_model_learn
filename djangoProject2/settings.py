@@ -37,11 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_yasg',
     'application.apps.ApplicationConfig',
     'projects.apps.ProjectsConfig',
     'interfaces.apps.InterfacesConfig',
     'param_app.apps.ParamAppConfig',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'pageapp.apps.PageappConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -82,11 +85,11 @@ WSGI_APPLICATION = 'djangoProject2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':  'api',
+        'NAME':  'cunfu',
         'HOST': '122.51.192.201',
-        'PORT': 3306,
+        'PORT': 3367,
         'USER': 'root',
-        'PASSWORD': '123'
+        'PASSWORD': 'ilrssw'
     }
 }
 
@@ -145,4 +148,6 @@ REST_FRAMEWORK = {
     # "ALLOWED_VERSIONS": ['v1', 'v2'],
     # "VERSION_PARAM": 'version',
     "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.URLPathVersioning",
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+
 }

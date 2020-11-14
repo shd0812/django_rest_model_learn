@@ -6,6 +6,7 @@
 # @Author  cunfu
 # @File seriazalizer.py
 from rest_framework import serializers
+from rest_framework import exceptions
 from rest_framework.validators import UniqueValidator
 from application.models import Persons
 

@@ -12,15 +12,14 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Persons',
+            name='Silk',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(help_text='姓名', max_length=100, verbose_name='姓名')),
-                ('phone', models.CharField(help_text='手机号', max_length=11, verbose_name='手机号')),
-                ('address', models.CharField(blank=True, help_text='家庭住址', max_length=200, null=True, verbose_name='家庭住址')),
+                ('name', models.CharField(max_length=50, unique=True)),
+                ('price', models.IntegerField()),
             ],
             options={
-                'db_table': 'tb_person',
+                'db_table': 'tb_silk',
             },
         ),
     ]

@@ -78,6 +78,7 @@ class OrderView(APIView):
     throttle_classes = [UserThrottling, ]
 
     def get(self, request):
+        self.dispatch()
         print(request.user.userType)
 
         return JsonResponse(result)
